@@ -17,9 +17,9 @@ public class ObjectSerializationUtil {
 
     //write LogReportResult to file
     public static void writeReportResult(String fileName,Object object){
-        String logFilePath = Constants.OBJECT_SERIALIZATION_STORAGE_PATH + fileName;
+        String logFilePath = Constant.OBJECT_SERIALIZATION_STORAGE_PATH + fileName;
         try {
-            File file = new File(Constants.OBJECT_SERIALIZATION_STORAGE_PATH);
+            File file = new File(Constant.OBJECT_SERIALIZATION_STORAGE_PATH);
             if(!file.exists()){
                 file.mkdir();
             }
@@ -35,7 +35,7 @@ public class ObjectSerializationUtil {
     //read LogReportResult from file
     public static Object readReportResult(String fileName){
         Object object = null;
-        String logFilePath = Constants.OBJECT_SERIALIZATION_STORAGE_PATH + fileName;
+        String logFilePath = Constant.OBJECT_SERIALIZATION_STORAGE_PATH + fileName;
         try {
             ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(logFilePath));
             object = inputStream.readObject();
